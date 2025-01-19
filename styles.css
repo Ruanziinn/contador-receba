@@ -1,0 +1,136 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
+    background: linear-gradient(to bottom, #ff7eb3, #ff758c);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 400px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+main h2 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.counter .time-display {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.time-block span {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.time-block p {
+    font-size: 1rem;
+    color: #ffe4e9;
+    text-transform: uppercase;
+}
+
+.days-only p {
+    font-size: 1.2rem;
+    color: #ffccdc;
+}
+
+.year-progress button {
+    font-family: cursive;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ff758c;
+    background: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.year-progress button:hover {
+    background: #ffd6e8;
+}
+
+#progress-bar-container {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0;
+    background: #ff758c;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ffd6e8;
+    font-style: italic;
+}
+
+/* Animação para os segundos */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.time-block span#seconds, .time-block span#minutes, .time-block span#hours, .time-block span#days, .time-block span#months{
+    animation: pulse 1s infinite ease-in-out;
+}
